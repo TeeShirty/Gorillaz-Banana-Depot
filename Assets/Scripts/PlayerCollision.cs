@@ -6,7 +6,13 @@ using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     public Text winLabel;
-    
+    CanvasManager canvasManager;
+
+    private void Start()
+    {
+        canvasManager = GameObject.FindGameObjectWithTag("Canvas").GetComponent<CanvasManager>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Death"))
@@ -32,6 +38,10 @@ public class PlayerCollision : MonoBehaviour
         {
             winLabel.enabled = true;
             winLabel.text = "Winner: Player 2";
+            canvasManager.restartButton.gameObject.SetActive(true);
+            canvasManager.exitButton.gameObject.SetActive(true);
+            canvasManager.restartButton.enabled = true;
+
         }
 
         if (gameObject.CompareTag("PlayerTwo"))

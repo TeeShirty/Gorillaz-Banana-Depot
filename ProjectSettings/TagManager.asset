@@ -9,6 +9,7 @@ TagManager:
   - PlayerOne
   - PlayerTwo
   - Death
+  - Canvas
   layers:
   - Default
   - TransparentFX
