@@ -48,6 +48,9 @@ public class PlayerCollision : MonoBehaviour
         {
             winLabel.enabled = true;
             winLabel.text = "Winner: Player 1";
+            canvasManager.restartButton.gameObject.SetActive(true);
+            canvasManager.exitButton.gameObject.SetActive(true);
+            canvasManager.restartButton.enabled = true;
         }
     }
 }

@@ -10,7 +10,7 @@ public class CanvasManager : MonoBehaviour
 {
     Scene currentScene;
 
-    public Text turnLabel, winLabel;
+    public Text turnLabel, winLabel, title;
     public Button startButton, restartButton, exitButton;
 
     // Start is called before the first frame update
@@ -18,10 +18,10 @@ public class CanvasManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
 
-        winLabel.enabled = false;
-        restartButton.gameObject.SetActive(false);
-        exitButton.gameObject.SetActive(false);
-        restartButton.enabled = false;
+        //winLabel.enabled = false;
+        //restartButton.gameObject.SetActive(false);
+        //exitButton.gameObject.SetActive(false);
+        //restartButton.enabled = false;
 
         if (startButton == true)
         {
@@ -43,6 +43,9 @@ public class CanvasManager : MonoBehaviour
 
         if(currentScene.name == "Level")
         {
+            title.gameObject.SetActive(false);
+            turnLabel.enabled = true;
+            winLabel.enabled = false;
             startButton.gameObject.SetActive(false);
             restartButton.gameObject.SetActive(false);
             exitButton.gameObject.SetActive(false);
@@ -50,6 +53,9 @@ public class CanvasManager : MonoBehaviour
         
         if (currentScene.name == "MainMenu")
         {
+            title.gameObject.SetActive(true);
+            turnLabel.enabled = false;
+            winLabel.enabled = false;
             startButton.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(false);
             exitButton.gameObject.SetActive(true);
